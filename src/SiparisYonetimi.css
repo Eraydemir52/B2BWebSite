@@ -1,0 +1,32 @@
+/* Tablo stilleri */
+#siparis-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Tablo başlık stilleri */
+#siparis-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Çift satırların arka plan rengi */
+#siparis-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Satır hover efekti */
+#siparis-table tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Tablo hücre içeriği stilleri */
+#siparis-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}

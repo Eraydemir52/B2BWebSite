@@ -1,0 +1,450 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1d2634;
+  color: #9e9ea4;
+  font-family: "Montserrat", sans-serif;
+}
+
+.icon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
+}
+.icon_header {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 26px;
+}
+.icon,
+.icon_header {
+  margin-right: 5px;
+}
+
+.close_icon {
+  color: red;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    "sidebar header header header"
+    "sidebar main main main";
+  height: 100vh;
+}
+
+/* Header  */
+.header {
+  grid-area: header;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  /* position: relative;
+  top: -40px;  */
+  position: fixed;
+  width: 81%;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-icon {
+  display: none;
+}
+/* End Header  */
+
+/* Sidebar  */
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: #263043;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 0px 30px;
+  margin-bottom: 30px;
+}
+
+.sidebar-title > span {
+  display: none;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: #9e9ea4;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  /*
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
+  z-index: 12 !important;
+}
+
+/* End Sidebar  */
+
+/* Main  */
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px 20px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.card:first-child {
+  background-color: #2962ff;
+}
+
+.card:nth-child(2) {
+  background-color: #ff6d00;
+}
+
+.card:nth-child(3) {
+  background-color: #2e7d32;
+}
+
+.card:nth-child(4) {
+  background-color: #d50000;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > .card_icon {
+  font-size: 25px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+  /* height: 300px; */
+}
+
+/* End Main  */
+
+/* Medium <= 992px */
+
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+  }
+}
+/* Small <= 768px */
+
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
+
+/*******Benim css***/
+.custom-table {
+  width: 100%; /* Tam genişlik */
+  max-width: none; /* Maksimum genişlik sınırlamasını kaldır */
+  table-layout: fixed;
+  height: auto;
+  border-collapse: collapse;
+  background-color: #1d2634;
+  color: #9e9ea4;
+  border: 1px solid #9e9ea4;
+  margin: 20px auto; /* Tabloyu ortala ve üst-alt boşluk ekleyebilirsiniz */
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #9e9ea4;
+}
+
+.custom-table th {
+  background-color: #1d2634;
+  color: #9e9ea4;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #384251;
+}
+.table-container {
+  overflow-x: hidden; /* Yatay kaydırmayı kaldır */
+  width: 100%; /* Sayfa genişliğine tamamen yayılsın */
+  display: flex;
+  justify-content: center; /* İçeriği yatayda ortala */
+  align-items: center; /* İçeriği dikeyde ortala */
+}
+.addToCartBtn {
+  background-color: #ffffff; /* Beyaz arka plan */
+  color: #1d2634; /* Metin rengi */
+  border-radius: 8px; /* Kenar yuvarlaklığı */
+  padding: 8px 16px; /* İsteğe bağlı: Düğme içeriğinin iç kenar boşluğu */
+  border: 1px solid #1d2634; /* İsteğe bağlı: Kenar rengi */
+  margin-left: -20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.addToCartBtn:hover {
+  background-color: #f0f0f0; /* Beyaz üzerine gelindiğinde farklı bir ton */
+  color: #1d2634;
+}
+.imageBtn {
+  background-color: #ffffff; /* Beyaz arka plan */
+  color: #1d2634; /* Metin rengi */
+  border-radius: 8px; /* Kenar yuvarlaklığı */
+  padding: 8px 16px; /* İsteğe bağlı: Düğme içeriğinin iç kenar boşluğu */
+  border: 1px solid #1d2634; /* İsteğe bağlı: Kenar rengi */
+  margin-right: -10px;
+}
+.imageBtn:hover {
+  background-color: #f0f0f0; /* Beyaz üzerine gelindiğinde farklı bir ton */
+  color: #1d2634;
+}
+.icon-space {
+  margin-right: 30px; /* İstedğiniz genişlikte boşluk */
+}
+.header-link {
+  display: flex;
+  position: relative;
+  align-items: center;
+  text-decoration: none; /* Bağlantı altı çizgiyi kaldır */
+  color: inherit; /* Bağlantı rengini kalıtım yap */
+}
+
+.cart-menu {
+  position: fixed;
+  display: inline-block;
+  margin-right: 10px; /* İstediğiniz boşluğu ayarlayabilirsiniz */
+}
+
+.cart-button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+}
+.cart-button:hover {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+}
+
+.cart-list {
+  display: none;
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #1d2634;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 200px; /* İstediğiniz genişliği ayarlayabilirsiniz */
+}
+
+.cart-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cart-list li:hover {
+  background-color: #9e9ea4;
+}
+
+.cart-menu:hover .cart-list {
+  display: block;
+}
+
+.cart-icon-container {
+  display: inline-block;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: 15px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+}
+
+/* CSS dosyanızda */
+.cart-quantity {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #2589e6; /* Örnek bir renk */
+  color: white;
+  padding: 0.2em 0.4em;
+  margin-left: 0.2em;
+}
+.ReactModal__Content img {
+  /* Img elementi için özel stiller */
+  width: 40%;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ReactModal__Content {
+  width: 50% !important;
+  height: 50% !important;
+  display: block !important;
+  margin: auto !important;
+  background-color: #1d2634 !important;
+  border: 5px solid rgb(8, 6, 6) !important;
+  border-radius: 10px !important;
+  padding: 20px !important;
+  color: #e4dede !important; /* Yazı rengini koyu yapmak için */
+  font-size: large;
+}
+.closeButton {
+  position: absolute;
+  top: 10px; /*   İstediğiniz yüksekliği ayarlayın */
+  right: 10px; /* İstediğiniz genişliği ayarlayın */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #eee7e7; /* İstediğiniz renk */
+}
+.closeButton:hover {
+  background-color: #707070;
+}
+.viewProductBtn button {
+  margin-right: 10px; /* Sağa  10 piksel margin bırakır, bu değeri ihtiyacınıza göre ayarlayabilirsiniz */
+}
+
+.inputSearch {
+  width: 50%; /* Sayfa genişliğine göre yüzde cinsinden genişlik */
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 12px;
+  border-radius: 20px; /* Kenarlık radius'u */
+  font-size: 14px; /* İstediğiniz font büyüklüğü */
+}
+
+/* Form konteyneri için ekstra stil */
+
+/* Form konteyneri için ekstra stil */
+
+/* Form konteyneri için ekstra stil */
+.form-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #1d2634;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+.buttonpassword {
+  display: block;
+  margin: 0 auto; /* Dikey hizalamayı sağlar */
+  /* Yatay hizalamayı sağlamak için gereken diğer stiller buraya eklenebilir */
+}
+.btn-admin {
+  margin-right: 10px;
+}

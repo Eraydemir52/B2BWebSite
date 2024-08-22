@@ -1,0 +1,24 @@
+#message-list-container {
+  padding: 20px;
+  color: #ddd;
+}
+
+#message-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#message-list th,
+#message-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#message-list th {
+  background-color: #1d2634;
+  text-align: left;
+}
+
+#message-list tr:hover {
+  background-color: #f1f1f154;
+}

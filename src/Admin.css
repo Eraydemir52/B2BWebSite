@@ -1,0 +1,97 @@
+.admin-container {
+  display: flex;
+  justify-content: space-between; /* Form ve tabloyu aralarında boşluk bırakarak yan yana getir */
+  align-items: flex-start; /* İçerikleri üst üste hizala */
+  gap: 20px; /* Form ve tablo arasında boşluk */
+}
+
+.admin-form {
+  width: 400px;
+  padding: 20px;
+  background-color: #1d2634;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.admin-form input[type="text"],
+.admin-form textarea,
+.admin-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.admin-form select {
+  width: 100%;
+}
+
+.admin-form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.admin-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.category-table {
+  width: calc(100% - 420px); /* Tabloyu formun sağında bırakmak için */
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.category-table th,
+.category-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #1d2634;
+  color: #fff; /* Tüm hücrelerin arka plan rengi ve yazı rengi */
+}
+
+.category-table th {
+  font-weight: bold;
+  text-align: left;
+}
+
+.category-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Çift sıraların arka plan rengi */
+}
+
+.category-table tr:hover {
+  background-color: #f9f9f9; /* Fare üzerindeki sıranın arka plan rengi */
+}
+/*******************************/
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  background-color: #263043; /* Yeşil arka plan rengi */
+  color: rgb(211, 205, 205);
+  border: none;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: rgb(
+    50,
+    53,
+    50
+  ); /* Üzerine gelindiğinde arka plan rengini daha belirgin hale getir */
+}
